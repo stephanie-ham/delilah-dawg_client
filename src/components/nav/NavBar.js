@@ -12,11 +12,13 @@ export const NavBar = () => {
             <li className="navbar__item">
                 Navigation link
             </li>
-            <li className="navbar__item">
-                Navigation link
+            <li className="navbar_item">
+                <Link className="navbar__item" to="/rareusers">
+                    Profile
+                </Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/tags">Manage Tags</Link>
+                <Link className="navbar__link" to="/tags">Tag Management</Link>
             </li>
             {
                 (localStorage.getItem("dd_token") !== null) ?
