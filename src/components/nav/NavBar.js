@@ -17,6 +17,9 @@ export const NavBar = () => {
                     Profile
                 </Link>
             </li>
+            <li className="navbar__item">
+                <Link className="navbar__link" to="/tags">Tag Management</Link>
+            </li>
             {
                 (localStorage.getItem("dd_token") !== null) ?
                     <li className="nav-item">
