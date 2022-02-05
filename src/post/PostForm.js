@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { PostContext } from "./PostProvider.js"
 import { useHistory } from "react-router-dom";
-import "./Events.css";
+// import "./Events.css";
 import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react/cjs/react.production.min";
 
 export const PostList = () => {
