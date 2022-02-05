@@ -15,7 +15,7 @@ export const ProfileList = () => {
     // const profile = parseInt(localStorage.getItem("rare_user_id"))
     return (
         <>
-            <h2>Profile</h2>
+            <h2>{profile.rareuser && profile.rareuser.user.first_name} {profile.rareuser && profile.rareuser.user.last_name}</h2>
             <section className="profile">
                 <div className="user_info">
                     {/* <div>
