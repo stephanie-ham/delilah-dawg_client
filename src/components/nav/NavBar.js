@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import "./NavBar.css"
 
 export const NavBar = () => {
@@ -15,12 +15,15 @@ export const NavBar = () => {
             <li className="navbar__item">
                 Navigation link
             </li>
+            <li className="navbar__item">
+                <Link className="navbar__link" to="/tags">Manage Tags</Link>
+            </li>
             {
-                (localStorage.getItem("lu_token") !== null) ?
+                (localStorage.getItem("dd_token") !== null) ?
                     <li className="nav-item">
                         <button className="nav-link fakeLink"
                             onClick={() => {
-                                localStorage.removeItem("lu_token")
+                                localStorage.removeItem("dd_token")
                                 history.push({ pathname: "/" })
                             }}
                         >Logout</button>
