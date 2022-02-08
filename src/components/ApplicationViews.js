@@ -1,5 +1,9 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { CategoryForm } from "./category/CategoryForm"
+import { CategoryList } from "./category/CategoryList"
+import { CategoryProvider } from "./category/CategoryProvider"
+// import { TagList } from "./tag/TagList"
 import { ProfileProvider } from "./profile/ProfileProvider"
 import { ProfileList } from "./profile/ProfileList"
 import { TagManagement } from "./tag/TagManagement"
@@ -13,6 +17,7 @@ export const ApplicationViews = () => {
         }}>
             <ProfileProvider>
                 <TagProvider>
+                <CategoryProvider>
                     <Route path="/rareusers">
                         <ProfileList />
                     </Route>
@@ -20,6 +25,15 @@ export const ApplicationViews = () => {
                     <Route exact path="/tags">
                         <TagManagement />
                     </Route>
+
+                    <Route exact path="/categories">
+                        <CategoryList />
+                    </Route>
+
+                    <Route exact path="/categories/new">
+                        <CategoryForm />
+                    </Route>
+                    </CategoryProvider>
                 </TagProvider>
             </ProfileProvider>
         </main>
