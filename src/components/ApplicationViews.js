@@ -4,6 +4,8 @@ import { CategoryForm } from "./category/CategoryForm"
 import { CategoryList } from "./category/CategoryList"
 import { CategoryProvider } from "./category/CategoryProvider"
 // import { TagList } from "./tag/TagList"
+import { ProfileProvider } from "./profile/ProfileProvider"
+import { ProfileList } from "./profile/ProfileList"
 import { TagManagement } from "./tag/TagManagement"
 import { TagProvider } from "./tag/TagProvider"
 
@@ -28,4 +30,22 @@ export const ApplicationViews = () => {
       </CategoryProvider>
     </main>
   </>
+    return <>
+        <main style={{
+            margin: "5rem 2rem",
+            backgroundColor: "lightgoldenrodyellow"
+        }}>
+            <ProfileProvider>
+                <TagProvider>
+                    <Route path="/rareusers">
+                        <ProfileList />
+                    </Route>
+
+                    <Route exact path="/tags">
+                        <TagManagement />
+                    </Route>
+                </TagProvider>
+            </ProfileProvider>
+        </main>
+    </>
 }

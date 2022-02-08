@@ -12,8 +12,15 @@ export const NavBar = () => {
             <li className="navbar__item">
                 Navigation link
             </li>
+<<<<<<< HEAD
             <li className="navbar__item">
                 <Link className="navbar_link" to="/categories">Categories</Link>
+=======
+            <li className="navbar_item">
+                <Link className="navbar__item" to="/rareusers">
+                    Profile
+                </Link>
+>>>>>>> main
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/tags">Tag Management</Link>
