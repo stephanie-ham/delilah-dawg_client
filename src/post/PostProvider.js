@@ -8,7 +8,7 @@ export const PostProvider = (props) => {
     const getPosts = () => {
         return fetch("http://localhost:8000/posts", {
             headers: {
-                Authorization: `Token ${localStorage.getItem("lu_token")}`,
+                Authorization: `Token ${localStorage.getItem("dd_token")}`,
             },
         })
             .then((response) => response.json())
@@ -19,7 +19,7 @@ export const PostProvider = (props) => {
         return fetch(`http://localhost:8000/posts`, {
             method: "POST",
             headers: {
-                Authorization: `Token ${localStorage.getItem("lu_token")}`,
+                Authorization: `Token ${localStorage.getItem("dd_token")}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(newPost)
@@ -32,7 +32,7 @@ export const PostProvider = (props) => {
         return fetch(`http://localhost:8000/posts/${post.id}`, {
             method: "PUT",
             headers: {
-                Authorization: `Token ${localStorage.getItem("lu_token")}`,
+                Authorization: `Token ${localStorage.getItem("dd_token")}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(post)
@@ -44,7 +44,7 @@ export const PostProvider = (props) => {
         return fetch(`http://localhost:8000/events/${eventId}/signup`, {
             method: "DELETE",
             headers: {
-                Authorization: `Token ${localStorage.getItem("lu_token")}`,
+                Authorization: `Token ${localStorage.getItem("dd_token")}`,
             },
         })
             .then(getPosts)

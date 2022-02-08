@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { PostContext } from "./PostProvider.js"
 import { useHistory } from "react-router-dom";
 // import "./Events.css";
-import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react/cjs/react.production.min";
+// import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react/cjs/react.production.min";
 
-export const PostList = () => {
+export const PostForm = () => {
     const history = useHistory();
     const { posts, getPosts, createPosts, editPost, deletePost } = useContext(PostContext);
 
@@ -21,7 +21,7 @@ export const PostList = () => {
     const editInputChange = (event) => {
         const newPost = { ...post }
         newPost[event.target.id] = event.target.value
-        setRealtor(newPost)
+        setCurrentPost(newPost)
     }
 
     // useEffect(() => {
