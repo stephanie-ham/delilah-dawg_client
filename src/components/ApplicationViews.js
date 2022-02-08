@@ -10,26 +10,6 @@ import { TagManagement } from "./tag/TagManagement"
 import { TagProvider } from "./tag/TagProvider"
 
 export const ApplicationViews = () => {
-  return <>
-    <main style={{
-      margin: "5rem 10rem",
-      // backgroundColor: "lightgoldenrodyellow"
-    }}>
-      <TagProvider>
-        <Route exact path="/tags">
-          <TagManagement />
-        </Route>
-      </TagProvider>    
-      <CategoryProvider>
-          <Route exact path="/categories">
-              <CategoryList />
-          </Route>
-          <Route exact path="/categories/new">
-            <CategoryForm />
-          </Route>
-      </CategoryProvider>
-    </main>
-  </>
     return <>
         <main style={{
             margin: "5rem 2rem",
@@ -37,6 +17,7 @@ export const ApplicationViews = () => {
         }}>
             <ProfileProvider>
                 <TagProvider>
+                <CategoryProvider>
                     <Route path="/rareusers">
                         <ProfileList />
                     </Route>
@@ -44,6 +25,15 @@ export const ApplicationViews = () => {
                     <Route exact path="/tags">
                         <TagManagement />
                     </Route>
+
+                    <Route exact path="/categories">
+                        <CategoryList />
+                    </Route>
+
+                    <Route exact path="/categories/new">
+                        <CategoryForm />
+                    </Route>
+                    </CategoryProvider>
                 </TagProvider>
             </ProfileProvider>
         </main>
