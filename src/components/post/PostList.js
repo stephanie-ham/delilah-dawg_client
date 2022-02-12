@@ -52,7 +52,7 @@ export const PostList = () => {
                                 <p> Title: {post.title}</p>
                                 <p> Category: {post.category}</p>
                                 <p>Image: {post.image_url}</p>
-                                <p>Reaction: {post.reaction}</p>
+                                <p>Reaction: {post.post_reactions}</p>
                                 <p>Created On: {post.publication_date}</p>
                                 <p>Content: {post.content}</p>
                                 <p>Tag: {post.tag}</p>
