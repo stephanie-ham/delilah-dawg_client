@@ -46,7 +46,7 @@ code {
 	color: inherit;
 	background: none;
 	cursor: pointer;
-	padding: 25px 80px;
+	padding: 1rem 2.5rem;
 	display: inline-block;
 	margin: 15px 30px;
 	text-transform: uppercase;
@@ -91,7 +91,7 @@ code {
 
 /* Button 1 */
 .btn-1 {
-	background: #3498db;
+	background: #8afecf;
 	color: #fff;
 }
 
@@ -166,8 +166,9 @@ code {
 
 /* Button 3 */
 .btn-4 {
-	background: #34495e;
+	background: #4e6072;
 	color: #fff;
+	margin-left: 0;
 }
 
 .btn-4:hover {
