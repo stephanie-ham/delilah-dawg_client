@@ -27,7 +27,7 @@ export const ApplicationViews = () => {
                 < PostProvider >
                     <TagProvider>
                         <CategoryProvider>
-                            <Route path="/posts/createnew">
+                            <Route path="/posts/new">
                                 <PostForm />
                             </Route >
                             <Route path="/post">
