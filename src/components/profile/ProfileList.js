@@ -18,6 +18,8 @@ export const ProfileList = () => {
         }
     }, [profile])
 
+    // const userPosts =
+
     // const profile = parseInt(localStorage.getItem("rare_user_id"))
     return (
         <>
@@ -37,7 +39,7 @@ export const ProfileList = () => {
             </section>
             <section className="posts">
                 <div className="user_posts">
-                    Posts: {profile.rareuser?.post.title}
+                    Posts: {profile.rareuser?.posts}
                 </div>
             </section>
         </>
