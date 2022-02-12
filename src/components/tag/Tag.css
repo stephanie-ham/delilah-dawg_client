@@ -1,4 +1,4 @@
-.tag {
+.tag__label {
     background: #eee;
     border-radius: 15px;
     color: #999;
@@ -7,6 +7,29 @@
     padding: 2px 20px 2px 20px;
     margin: 0 10px 10px 0;
     justify-content: center;
+
+}
+
+.tag {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.delete, .edit {
+    background: rgb(255, 255, 255);
+    border: rgb(10, 49, 50) dotted 2px;
+    border-radius: 15px;
+    color: rgb(10, 49, 50);
+    margin: 0 10px 0 0;
+    padding: 1.5px 15px 1.5px 15px;
+    justify-content: center;
+    text-align: center;
+}
+.delete:hover, .edit:hover {
+    background-color: rgb(10, 49, 50);
+    color: white;
+    border: rgb(10, 49, 50) solid 2px;
+    cursor: pointer;
 }
 
 .list__header {
