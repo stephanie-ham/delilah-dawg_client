@@ -4,14 +4,20 @@ import { ProfileContext } from "./ProfileProvider"
 
 
 export const ProfileList = () => {
-    const { profile, getProfile } = useContext(ProfileContext)
+    const { profile, getProfile, getPostsByUser, posts } = useContext(ProfileContext)
     // const { userId } = useParams();
     // const userProfile = []
-    
+
     useEffect(() => {
         getProfile();
     }, [])
-    
+
+    useEffect(() => {
+        if (profile.rareuser) {
+            getPostsByUser(profile.rareuser.id);
+        }
+    }, [profile])
+
     // const profile = parseInt(localStorage.getItem("rare_user_id"))
     return (
         <>
@@ -27,6 +33,11 @@ export const ProfileList = () => {
                     <div>
                         Created on {profile.rareuser?.created_on}
                     </div>
+                </div>
+            </section>
+            <section className="posts">
+                <div className="user_posts">
+                    Posts: {profile.rareuser?.post.title}
                 </div>
             </section>
         </>
