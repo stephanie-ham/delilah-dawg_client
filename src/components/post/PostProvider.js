@@ -41,7 +41,7 @@ export const PostProvider = (props) => {
     }
 
     const deletePost = (postId) => {
-        return fetch(`http://localhost:8000/events/${eventId}/signup`, {
+        return fetch(`http://localhost:8000/events/${postId}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Token ${localStorage.getItem("dd_token")}`,
