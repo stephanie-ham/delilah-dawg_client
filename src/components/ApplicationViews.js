@@ -2,10 +2,9 @@ import React from "react"
 import { Route } from "react-router-dom"
 
 //Posts
-import { PostProvider } from "../post/PostProvider"
-import { PostForm } from "../post/PostForm"
-import { PostList } from "../post/PostList"
-
+import { PostProvider } from "./post/PostProvider"
+import { PostForm } from "./post/PostForm"
+import { PostList } from "./post/PostList"
 import { CategoryForm } from "./category/CategoryForm"
 import { CategoryList } from "./category/CategoryList"
 import { CategoryProvider } from "./category/CategoryProvider"
@@ -43,6 +42,9 @@ export const ApplicationViews = () => {
                                 <CategoryList />
                             </Route>
                             <Route exact path="/categories/new">
+                                <CategoryForm />
+                            </Route>
+                            <Route path="/categories/edit/:categoryId(\d+)">
                                 <CategoryForm />
                             </Route>
                         </CategoryProvider>
