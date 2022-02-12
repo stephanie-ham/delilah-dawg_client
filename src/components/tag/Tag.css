@@ -1,0 +1,33 @@
+.tag {
+    background: #eee;
+    border-radius: 15px;
+    color: #999;
+    height: 26px;
+    line-height: 26px;
+    padding: 2px 20px 2px 20px;
+    margin: 0 10px 10px 0;
+    justify-content: center;
+}
+
+.list__header {
+    width: 100%;
+}
+
+.tag__management {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 2;
+}
+
+.tag__form {
+    flex: 1;
+    border-radius: 10px;
+    padding: 3rem;
+    background-color: rgb(223, 224, 239);
+}
