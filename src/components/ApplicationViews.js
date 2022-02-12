@@ -14,6 +14,7 @@ import { ProfileProvider } from "./profile/ProfileProvider"
 import { ProfileList } from "./profile/ProfileList"
 import { TagManagement } from "./tag/TagManagement"
 import { TagProvider } from "./tag/TagProvider"
+import { TagDetail } from "./tag/TagDetail"
 
 
 export const ApplicationViews = () => {
@@ -21,7 +22,7 @@ export const ApplicationViews = () => {
 
         <main style={{
             margin: "5rem 2rem",
-            backgroundColor: "lightgoldenrodyellow"
+            // backgroundColor: "lightgoldenrodyellow"
         }}>
             <ProfileProvider>
                 < PostProvider >
@@ -38,6 +39,9 @@ export const ApplicationViews = () => {
                             </Route>
                             <Route exact path="/tags">
                                 <TagManagement />
+                            </Route>
+                            <Route exact path="/tags/:tagId(\d+)/edit">
+                                <TagDetail />
                             </Route>
                             <Route exact path="/categories">
                                 <CategoryList />
