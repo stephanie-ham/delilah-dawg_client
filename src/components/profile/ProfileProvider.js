@@ -1,21 +1,33 @@
-import React, { useState, createContext} from "react"
+import React, { useState, createContext } from "react"
 
 export const ProfileContext = createContext()
 
 export const ProfileProvider = (props) => {
-    const [profile, setProfile ] = useState([])
-    const [posts, setPosts ] = useState([])
+    const [profile, setProfile] = useState([])
+    const [posts, setPosts] = useState([])
 
-    
+
     const getProfile = () => {
         return fetch("http://localhost:8000/rareusers", {
             headers: {
                 Authorization: `Token ${localStorage.getItem("dd_token")}`,
             },
         })
-        .then((response) => response.json())
-        .then(setProfile);
+            .then((response) => response.json())
+            .then(res => {
+                setProfile(res.rareuser)
+            });
     };
+
+    const getProfileById = (id) => {
+        return fetch(`http://localhost:8000/rareusers/${id}`, {
+            headers: {
+                Authorization: `Token ${localStorage.getItem("dd_token")}`,
+            },
+        })
+            .then((response) => response.json())
+            .then(setProfile)
+    }
 
     const getPostsByUser = (id) => {
         return fetch(`http://localhost:8000/rareusers/${id}/posts`, {
@@ -23,18 +35,18 @@ export const ProfileProvider = (props) => {
                 Authorization: `Token ${localStorage.getItem("dd_token")}`,
             },
         })
-        .then((response) => response.json())
-        .then(setPosts)
+            .then((response) => response.json())
+            .then(setPosts)
     }
 
     const editProfile = (rareuser) => {
-        return fetch(`http://localhost:8000/rareusers/${rareuser}`, {
+        return fetch(`http://localhost:8000/rareusers/${rareuser.id}`, {
             method: "PUT",
             headers: {
                 Authorization: `Token ${localStorage.getItem("dd_token")}`,
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(post)
+            body: JSON.stringify(rareuser)
         })
             .then(getProfile)
     }
@@ -48,10 +60,10 @@ export const ProfileProvider = (props) => {
         })
             .then(getProfile)
     };
-    
+
     return (
         <ProfileContext.Provider value={{
-            getProfile, profile, getPostsByUser, deleteProfile, editProfile, posts
+            getProfile, profile, getPostsByUser, deleteProfile, editProfile, posts, getProfileById
         }}>
             {props.children}
         </ProfileContext.Provider>
